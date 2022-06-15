@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: "Lato", sans-serif;
   }
   
@@ -9,7 +9,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(92, 88, 88);
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -18,7 +18,7 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: #f1e5e5;
     display: block;
     border: none;
     background: none;
@@ -57,4 +57,4 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-  } */
+  }
