@@ -1,0 +1,35 @@
+<div class="row form-style"><br><br>
+    <div class="col-md-2"></div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-6">
+        <h2 class="login">Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" placeholder="Enter you name">
+                <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Enter password">
+                <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div> -->
+            </div>
+            <div class="login-btn form-group">
+                <button class="btn btn-primary" (click)="onSubmit()">
+                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2"></div>
+</div>
+
+
