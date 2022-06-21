@@ -1,0 +1,41 @@
+label {
+    font-size: 19px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+#first-in,
+#last-in,
+#city-in,
+#id-in {
+    height: 40px;
+    width: 43%;
+    background-color: #D7D8D4;
+    border-radius: 12px;
+    font-family: fontawesome;
+    font-size: 18px;
+    border: 0;
+}
+
+#addbtn {
+    width: auto;
+    height: auto;
+    padding: 7px;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 12px;
+    background-color: rgb(214, 213, 223);
+}
+
+#editbtn {
+    margin-left: 10px;
+    width: 160px;
+    height: auto;
+    padding: 7px;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 12px;
+    background-color: rgb(214, 213, 223);
+}
