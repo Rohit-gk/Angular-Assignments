@@ -1,0 +1,93 @@
+<div class="row container-fluid p-5 bg-primary text-white text-center">
+
+    <div class="col-8">
+      <h2>INCUBEXPERTS</h2>
+    </div>
+    <div class="col-1">
+        <img src="assets/profile.png" alt="" class="img">
+    </div>
+    <div class="col-3">
+        <div><span style="font-weight: bold;">Username :</span> {{userName}}</div>
+        <div><span style="font-weight: bold;">Email :</span> {{email}}</div>
+    </div>
+  </div>
+
+<!-- 
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> You data has been enetered successfully.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div> -->
+    
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6 card"><br>
+
+        <h4>Select Date of Birth</h4><br>
+        <input
+        style="width: 300px; position: relative; left: 10px;"
+        type="date"
+        [(ngModel)]="age"
+        class="form-control"
+        id="dob"
+      /><br><br>
+
+      <button class="btn btn-primary" style="width: 100px;" (click)="ageCalculator()">ShowAge</button><br>
+
+      
+      <h6>Your age is
+        <span style="font-weight: bold;" [ngStyle]="{'color':showAge < 18 ? 'red' : 'green'}">{{showAge}}</span>
+      </h6>
+      
+      </div>
+
+
+
+      <div class="col-sm-6 card"><br>
+        <h4>User Profile</h4><br>
+        <form>
+            <input
+            style="width: 300px; position: relative; left: 10px;"
+            type="text"
+            name="fname"
+            [(ngModel)]="firstName"
+            class="form-control"
+            placeholder="First Name"
+          /><br>
+
+          <input
+          style="width: 300px; position: relative; left: 10px;"
+          type="text"
+          name="lname"
+          [(ngModel)]="lastName"
+          class="form-control"
+         
+          placeholder="Last Name"
+        /><br>
+
+        <input
+        style="width: 300px; position: relative; left: 10px;"
+        type="text"
+        name="username"
+        [(ngModel)]="userName"
+        class="form-control"
+        placeholder="Username"
+      /><br>
+
+      <input
+      style="width: 300px; position: relative; left: 10px;"
+      type="email"
+      name="email1"
+      [(ngModel)]="email"
+      class="form-control"
+      placeholder="Email"
+    /><br>
+   
+
+    <button type="submit" class="btn btn-success" (click)="openAlert()">Submit</button><br><br>
+        </form>
+      </div>
+    </div>
+  </div>
+  
