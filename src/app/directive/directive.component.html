@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Zip</th>
+            <th *ngIf="display">Mobileno</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let list of customerlist">
+          <tr>
+            <td><p *ngIf="!(list.fname.length > 4)">{{list.fname}}</p><p *ngIf="list.fname.length > 4" appDemo>{{list.fname}}</p></td>
+            <td [style.color]="(list.lname.substring(0,1) === ('M')) || list.lname.substring(0,1) === ('C') || list.lname.substring(0,1) === ('D')  ? 'red' : 'green' ">{{list.lname}}</td>
+            <td>{{list.zip}}</td>
+            <td *ngIf="display">{{list.mobile}}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <button class="btn btn-danger" style="width: 100px;" (click)="show()">TEST</button>
+</div>
