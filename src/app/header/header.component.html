@@ -4,7 +4,7 @@
       <h2>INCUBEXPERTS</h2>
     </div>
     <div class="col-1">
-        <img src="assets/profile.png" alt="" class="img">
+        <img [src]="image" alt="" class="img">
     </div>
     <div class="col-3">
         <div><span style="font-weight: bold;">Username :</span> {{userName}}</div>
@@ -37,7 +37,7 @@
 
       
       <h6>Your age is
-        <span style="font-weight: bold;" [ngStyle]="{'color':showAge < 18 ? 'red' : 'green'}">{{showAge}}</span>
+        <span style="font-weight: bold;" [style.color]="showAge < 18 ? 'red' : 'green'">{{showAge}}</span>
       </h6>
       
       </div>
