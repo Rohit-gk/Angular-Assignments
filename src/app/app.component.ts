@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'component-interaction';
+
+  listDataArray:any=[];
+  stuData: any;
+
+  studentData(event:any){
+    this.listDataArray = event;
+    console.log("Main:", this.listDataArray)
+  }
+
+  editdata(event:any){
+     this.stuData = event;
+  }
 }
