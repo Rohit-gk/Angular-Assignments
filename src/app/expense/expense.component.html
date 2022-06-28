@@ -1,0 +1,98 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-2 mb-2" *ngFor="let month of monthList">
+            <div class="card">
+                <div class="months">{{month.name}}</div>
+                <div class="counters">{{month.value}}</div>
+            </div>
+        </div>
+    </div><br>
+
+
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <button type="submit" type="button" data-toggle="modal" data-target="#myModal">Add
+                Expenses</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <table id="myTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="2">Expenses</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let expense of expenseData; let i = index;">
+                        <td colspan="2">{{expense.expense}}</td>
+                        <td>{{expense.amount}}</td>
+                        <td>{{expense.date}}</td>
+                        <td><img src="assets/delete.png" style="height: 20px;" (click)="removeExpense(expense, i)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal code  -->
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Expenses Details</h4>
+                <span style="cursor: pointer;" class="close" data-dismiss="modal">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="expenseForm" style="border:1px solid #ccc">
+                    <div class="container">
+                        <label for="expense"><b>Expenses</b></label>
+                        <input type="text" formControlName="expense" class="form-control" placeholder="Enter Expenses"
+                            name="expense">
+                        <div *ngIf="validation['expense'].errors">
+                            <span class="error" *ngIf="validation['expense'].errors['required']">
+                                Expense is required
+                            </span>
+                        </div>
+
+                        <label for="amount"><b>Amount</b></label>
+                        <input type="text" formControlName="amount" class="form-control" placeholder="Enter Amount"
+                            name="amount" minlength="1" maxlength="10">
+                        <div *ngIf="validation['amount'].errors">
+                            <span class="error" *ngIf="validation['amount'].errors['required']">Amount is
+                                required</span>
+                        </div>
+
+                        <label for="date"><b>Date</b></label>
+                        <input class="form-control" formControlName="date" type="date" min="2022-01-01" max="2023-01-01"
+                            placeholder="dd/mm/yyyy">
+                        <div *ngIf="validation['date'].errors">
+                            <span class="error" *ngIf="validation['date'].errors['required']">Date is required</span>
+                        </div>
+                        <br>
+                        <div class="clearfix">
+                            <button type="submit" class="signupbtn" data-dismiss="modal"
+                                (click)="AddExpenses()">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+
+        </div>
+    </div>
+</div>
