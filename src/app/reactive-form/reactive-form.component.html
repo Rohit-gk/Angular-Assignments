@@ -1,0 +1,380 @@
+<div class="card m-3">
+  <h4 class="card-body">Basic Info</h4>
+  <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Employee No</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="empno" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Employee No is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>First Name</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="firstName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Middle Name</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="middleName" class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f.middleName.errors }" />
+          <div *ngIf="submitted && f.middleName.errors" class="invalid-feedback">
+            <div *ngIf="f.middleName.errors.required">Middle Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Last Name</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="lastName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-row">
+        <h4 class="card-body">Work</h4>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Department</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="dept" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.dept.errors }" />
+          <div *ngIf="submitted && f.dept.errors" class="invalid-feedback">
+            <div *ngIf="f.dept.errors.required">Department is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Location</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="location" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+          <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+            <div *ngIf="f.location.errors.required">Location is required</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Work phone</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="workPhone" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.workPhone.errors }" />
+          <div *ngIf="submitted && f.workPhone.errors" class="invalid-feedback">
+            <div *ngIf="f.workPhone.errors.required">Work phone is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Salary Revision Due</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="date" formControlName="salaryDueOn" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.salaryDueOn.errors }" />
+          <div *ngIf="submitted && f.salaryDueOn.errors" class="invalid-feedback">
+            <div *ngIf="f.salaryDueOn.errors.required">Salary Revision Due On is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Date of joining</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="date" formControlName="dateOfjoining" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.dateOfjoining.errors }" />
+          <div *ngIf="submitted && f.dateOfjoining.errors" class="invalid-feedback">
+            <div *ngIf="f.dateOfjoining.errors.required">Date of joining is required</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-row">
+        <h4 class="card-body">Personal</h4>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Mobile Number</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="mobileNo" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
+          <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
+            <div *ngIf="f.mobileNo.errors.required">Mobile no is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Address</label>
+        </div>
+        <div class="form-group col-5">
+          <textarea type="date" formControlName="address" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.address.errors }"></textarea>
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+            <div *ngIf="f.address.errors.required">Address is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Other Email</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Tags</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="tags" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
+          <div *ngIf="submitted && f.tags.errors" class="invalid-feedback">
+            <div *ngIf="f.tags.errors.required">Tags are required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Birth Date</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="date" formControlName="birthDate" class="form-control" max="2012-10-31"
+            [ngClass]="{ 'is-invalid': submitted && f.birthDate.errors }" />
+          <div *ngIf="submitted && f.birthDate.errors" class="invalid-feedback">
+            <div *ngIf="f.birthDate.errors.required">Birth date is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Current T Shirt size</label>
+        </div>
+        <div class="form-group col-5">
+          <select formControlName="tshirtSize" class="form-control">
+            <option *ngFor="let size of ts | keyvalue">
+              {{ size.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Martial Status</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="martialStatus" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.martialStatus.errors }" />
+          <div *ngIf="submitted && f.martialStatus.errors" class="invalid-feedback">
+            <div *ngIf="f.martialStatus.errors.required">Martial status is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Blood Group</label>
+        </div>
+        <div class="form-group col-5">
+          <select formControlName="bloodGroup" class="form-control">
+            <option *ngFor="let blood of blood | keyvalue;">
+              {{ blood.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Age</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="age" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+            <div *ngIf="f.age.errors.required">Age is required</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-row">
+        <h4 class="card-body">Summary</h4>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Job Description</label>
+        </div>
+        <div class="form-group col-5">
+
+          <textarea type="text" formControlName="jobDesc" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.jobDesc.errors }"></textarea>
+          <div *ngIf="submitted && f.jobDesc.errors" class="invalid-feedback">
+            <div *ngIf="f.jobDesc.errors.required">Job description is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>About Me</label>
+        </div>
+        <div class="form-group col-5">
+          <textarea type="text" formControlName="aboutMe" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.aboutMe.errors }"></textarea>
+          <div *ngIf="submitted && f.aboutMe.errors" class="invalid-feedback">
+            <div *ngIf="f.aboutMe.errors.required">AboutMe is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Ask me Expertise</label>
+        </div>
+        <div class="form-group col-5">
+          <textarea type="text" formControlName="askExpertise" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.askExpertise.errors }"></textarea>
+          <div *ngIf="submitted && f.askExpertise.errors" class="invalid-feedback">
+            <div *ngIf="f.askExpertise.errors.required">Expertise is required</div>
+          </div>
+        </div>
+
+        <div class="form-group col-1">
+          <label>Present Address</label>
+        </div>
+        <div class="form-group col-5">
+          <textarea type="text" formControlName="presentAddress" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.presentAddress.errors }"></textarea>
+          <div *ngIf="submitted && f.presentAddress.errors" class="invalid-feedback">
+            <div *ngIf="f.presentAddress.errors.required">Present address is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-1">
+          <label>Residence Phone</label>
+        </div>
+        <div class="form-group col-5">
+          <input type="text" formControlName="residencephone" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.residencephone.errors }" />
+          <div *ngIf="submitted && f.residencephone.errors" class="invalid-feedback">
+            <div *ngIf="f.residencephone.errors.required">Residence phone required</div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      
+ <!-- formGroupName start here -->
+
+      <div formGroupName="addrows">
+        <div class="form-row">
+          <div class="form-group col-11">
+            <h4 class="card-body">Work Exprience</h4>
+          </div>
+          <div class="form-group col-1">
+            <img src="assets/add.jfif" alt="" width="50" height="40" (click)="addNewRow()">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-2">
+            <h6>Previous Company Name</h6>
+          </div>
+
+          <div class="form-group col-2">
+            <h6>Job Title</h6>
+          </div>
+
+          <div class="form-group col-2">
+            <h6>From Date</h6>
+          </div>
+
+          <div class="form-group col-2">
+            <h6>To Date</h6>
+          </div>
+
+          <div class="form-group col-2">
+            <h6>Job Description</h6>
+          </div>
+
+          <div class="form-group col-2">
+            <h6>Relevance</h6>
+          </div>
+        </div>
+
+        <div class="form-row" *ngFor="let add of addrow.controls let i=index" [formGroupName]="i">
+          <div class="form-group col-2">
+            <input type="text" formControlName="prevCompanyName" class="form-control">
+          </div>
+
+          <div class="form-group col-2">
+            <input type="text" formControlName="jobTitle" class="form-control">
+          </div>
+
+          <div class="form-group col-2">
+            <input type="date" min="2000-01-01" max="2022-06-30" formControlName="fromDate"
+              class="form-control">
+          </div>
+
+          <div class="form-group col-2">
+            <input type="date" min="2000-01-01" max="2022-07-30"  formControlName="toDate"
+              class="form-control">
+          </div>
+
+          <div class="form-group col-2">
+            <input type="text" formControlName="jobDescription" class="form-control">
+          </div>
+
+          <div class="form-group col-2">
+            <select formControlName="relevance"  class="form-control">
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- formGroupName end here -->
+
+      <div class="text-center">
+        <button class="btn btn-primary mr-1">Submit</button>
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
