@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppService } from './services/app.service';
+import { User } from './services/user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'api-assignment';
+  
 }
