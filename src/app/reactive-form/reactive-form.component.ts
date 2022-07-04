@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Size } from "../reactive-form/size";
 import { blood } from './blood';
+import { relevance } from './relevance';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,9 +12,11 @@ import { blood } from './blood';
 export class ReactiveFormComponent implements OnInit {
   ts = Size
   blood = blood
+  relevance = relevance
 
   registerForm: any = FormGroup;
   submitted = false;
+  age: any;
 
   constructor(private formBuilder: FormBuilder) {
 
@@ -22,28 +25,28 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       empno: ['', Validators.required],
-      firstName: ['', Validators.required],
-      middleName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      dept: ['', Validators.required],
-      workPhone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      firstName: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      middleName: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      lastName: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      dept: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      workPhone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       salaryDueOn: ['', Validators.required],
-      location: ['', Validators.required],
+      location: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
       dateOfjoining: ['', Validators.required],
-      mobileNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       address: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      tags: ['', Validators.required],
+      tags: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
       birthDate: ['', Validators.required],
       tshirtSize: ['',],
-      martialStatus: ['', Validators.required],
+      martialStatus: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
       bloodGroup: ['',],
       age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(3)]],
-      jobDesc: ['', Validators.required],
-      aboutMe: ['', Validators.required],
-      askExpertise: ['', Validators.required],
+      jobDesc: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      aboutMe: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
+      askExpertise: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
       presentAddress: ['', Validators.required],
-      residencephone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      residencephone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
 
       addrows: this.formBuilder.array([]),
     });
@@ -77,6 +80,14 @@ export class ReactiveFormComponent implements OnInit {
 
   get addrow() {
     return this.registerForm.get('addrows') as FormArray;
+  }
+
+  ageCalculate(){
+    let currentYear = new Date();
+    let dob = new Date(this.registerForm.value.birthDate);
+    let year = dob.getFullYear();
+    let currentYearValue = currentYear.getFullYear()
+    this.age = currentYearValue-year;
   }
 }
 

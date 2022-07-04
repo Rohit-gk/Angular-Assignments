@@ -7,10 +7,10 @@
           <label>Employee No</label>
         </div>
         <div class="form-group col-5">
-          <input type="text" formControlName="empno" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">Employee No is required</div>
+          <input type="number" formControlName="empno" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.empno.errors }" />
+          <div *ngIf="submitted && f.empno.errors" class="invalid-feedback">
+            <div *ngIf="f.empno.errors.required">Employee No is required</div>
           </div>
         </div>
 
@@ -22,6 +22,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
             <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <div *ngIf="f.firstName.errors.pattern">Only String accept here</div>
           </div>
         </div>
       </div>
@@ -35,6 +36,7 @@
           [ngClass]="{ 'is-invalid': submitted && f.middleName.errors }" />
           <div *ngIf="submitted && f.middleName.errors" class="invalid-feedback">
             <div *ngIf="f.middleName.errors.required">Middle Name is required</div>
+            <div *ngIf="f.middleName.errors.pattern">Only String accept here</div>
           </div>
         </div>
 
@@ -43,9 +45,10 @@
         </div>
         <div class="form-group col-5">
           <input type="text" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
             <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.pattern">Only String accept here</div>
           </div>
         </div>
       </div>
@@ -64,6 +67,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.dept.errors }" />
           <div *ngIf="submitted && f.dept.errors" class="invalid-feedback">
             <div *ngIf="f.dept.errors.required">Department is required</div>
+            <div *ngIf="f.dept.errors.pattern">Only String accept here</div>
           </div>
         </div>
 
@@ -75,6 +79,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
           <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
             <div *ngIf="f.location.errors.required">Location is required</div>
+            <div *ngIf="f.location.errors.pattern">Only String accept here</div>
           </div>
         </div>
       </div>
@@ -85,10 +90,11 @@
           <label>Work phone</label>
         </div>
         <div class="form-group col-5">
-          <input type="text" formControlName="workPhone" class="form-control"
+          <input type="number" formControlName="workPhone" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.workPhone.errors }" />
           <div *ngIf="submitted && f.workPhone.errors" class="invalid-feedback">
             <div *ngIf="f.workPhone.errors.required">Work phone is required</div>
+            <div *ngIf="f.workPhone.errors.pattern">Enter 10 digit Mobile Number.</div>                        
           </div>
         </div>
 
@@ -97,7 +103,7 @@
         </div>
         <div class="form-group col-5">
           <input type="date" formControlName="salaryDueOn" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.salaryDueOn.errors }" />
+          max="2022-07-05" [ngClass]="{ 'is-invalid': submitted && f.salaryDueOn.errors }" />
           <div *ngIf="submitted && f.salaryDueOn.errors" class="invalid-feedback">
             <div *ngIf="f.salaryDueOn.errors.required">Salary Revision Due On is required</div>
           </div>
@@ -110,7 +116,7 @@
         </div>
         <div class="form-group col-5">
           <input type="date" formControlName="dateOfjoining" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.dateOfjoining.errors }" />
+           max="2022-07-04" [ngClass]="{ 'is-invalid': submitted && f.dateOfjoining.errors }" />
           <div *ngIf="submitted && f.dateOfjoining.errors" class="invalid-feedback">
             <div *ngIf="f.dateOfjoining.errors.required">Date of joining is required</div>
           </div>
@@ -127,10 +133,11 @@
           <label>Mobile Number</label>
         </div>
         <div class="form-group col-5">
-          <input type="text" formControlName="mobileNo" class="form-control"
+          <input type="number" formControlName="mobileNo" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
           <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
             <div *ngIf="f.mobileNo.errors.required">Mobile no is required</div>
+            <div *ngIf="f.mobileNo.errors.pattern">Enter 10 digit Mobile Number.</div>
           </div>
         </div>
 
@@ -155,7 +162,9 @@
             [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
             <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
           </div>
+          
         </div>
 
         <div class="form-group col-1">
@@ -166,6 +175,7 @@
           [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" />
           <div *ngIf="submitted && f.tags.errors" class="invalid-feedback">
             <div *ngIf="f.tags.errors.required">Tags are required</div>
+            <div *ngIf="f.tags.errors.pattern">Only String accept here</div>
           </div>
         </div>
       </div>
@@ -175,7 +185,7 @@
           <label>Birth Date</label>
         </div>
         <div class="form-group col-5">
-          <input type="date" formControlName="birthDate" class="form-control" max="2012-10-31"
+          <input type="date" formControlName="birthDate" class="form-control" max="2022-07-04" (change)="ageCalculate()"
             [ngClass]="{ 'is-invalid': submitted && f.birthDate.errors }" />
           <div *ngIf="submitted && f.birthDate.errors" class="invalid-feedback">
             <div *ngIf="f.birthDate.errors.required">Birth date is required</div>
@@ -187,6 +197,7 @@
         </div>
         <div class="form-group col-5">
           <select formControlName="tshirtSize" class="form-control">
+            <option>Select...</option>
             <option *ngFor="let size of ts | keyvalue">
               {{ size.value}}
             </option>
@@ -203,6 +214,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.martialStatus.errors }" />
           <div *ngIf="submitted && f.martialStatus.errors" class="invalid-feedback">
             <div *ngIf="f.martialStatus.errors.required">Martial status is required</div>
+            <div *ngIf="f.martialStatus.errors.pattern">Only String accept here</div>
           </div>
         </div>
 
@@ -211,6 +223,7 @@
         </div>
         <div class="form-group col-5">
           <select formControlName="bloodGroup" class="form-control">
+            <option>Select...</option>
             <option *ngFor="let blood of blood | keyvalue;">
               {{ blood.value}}
             </option>
@@ -223,19 +236,15 @@
           <label>Age</label>
         </div>
         <div class="form-group col-5">
-          <input type="text" formControlName="age" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
-          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
-            <div *ngIf="f.age.errors.required">Age is required</div>
-          </div>
+          <input type="text" formControlName="age" class="form-control"  value={{age}} >
         </div>
       </div>
 
       <hr>
+      
       <div class="form-row">
         <h4 class="card-body">Summary</h4>
       </div>
-
       <div class="form-row">
         <div class="form-group col-1">
           <label>Job Description</label>
@@ -246,6 +255,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.jobDesc.errors }"></textarea>
           <div *ngIf="submitted && f.jobDesc.errors" class="invalid-feedback">
             <div *ngIf="f.jobDesc.errors.required">Job description is required</div>
+            <div *ngIf="f.jobDesc.errors.pattern">Only String accept here</div>
           </div>
         </div>
 
@@ -257,6 +267,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.aboutMe.errors }"></textarea>
           <div *ngIf="submitted && f.aboutMe.errors" class="invalid-feedback">
             <div *ngIf="f.aboutMe.errors.required">AboutMe is required</div>
+            <div *ngIf="f.aboutMe.errors.pattern">Only String accept here</div>
           </div>
         </div>
       </div>
@@ -270,6 +281,7 @@
             [ngClass]="{ 'is-invalid': submitted && f.askExpertise.errors }"></textarea>
           <div *ngIf="submitted && f.askExpertise.errors" class="invalid-feedback">
             <div *ngIf="f.askExpertise.errors.required">Expertise is required</div>
+            <div *ngIf="f.askExpertise.errors.pattern">Only String accept here</div>
           </div>
         </div>
 
@@ -290,10 +302,11 @@
           <label>Residence Phone</label>
         </div>
         <div class="form-group col-5">
-          <input type="text" formControlName="residencephone" class="form-control"
+          <input type="number" formControlName="residencephone" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.residencephone.errors }" />
           <div *ngIf="submitted && f.residencephone.errors" class="invalid-feedback">
             <div *ngIf="f.residencephone.errors.required">Residence phone required</div>
+            <div *ngIf="f.residencephone.errors.pattern">Enter 10 digit Mobile Number.</div>
           </div>
         </div>
       </div>
@@ -307,7 +320,7 @@
             <h4 class="card-body">Work Exprience</h4>
           </div>
           <div class="form-group col-1">
-            <img src="assets/add.jfif" alt="" width="50" height="40" (click)="addNewRow()">
+            <button class="btn btn-primary" [disabled]="addrow.invalid" (click)="addNewRow()">Row +</button>
           </div>
         </div>
 
@@ -347,12 +360,12 @@
           </div>
 
           <div class="form-group col-2">
-            <input type="date" min="2000-01-01" max="2022-06-30" formControlName="fromDate"
+            <input type="date" min="2000-01-01" max="2022-07-05" formControlName="fromDate"
               class="form-control">
           </div>
 
           <div class="form-group col-2">
-            <input type="date" min="2000-01-01" max="2022-07-30"  formControlName="toDate"
+            <input type="date" min="2000-01-01" max="2022-07-05"  formControlName="toDate"
               class="form-control">
           </div>
 
@@ -362,8 +375,10 @@
 
           <div class="form-group col-2">
             <select formControlName="relevance"  class="form-control">
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+              <option>Select...</option>
+              <option *ngFor="let rel of relevance | keyvalue;">
+                {{ rel.value}}
+              </option>
             </select>
           </div>
         </div>
