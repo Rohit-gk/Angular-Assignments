@@ -1,0 +1,120 @@
+<div class="addEmp">Add Employee</div>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form [formGroup]="empForm" style="border:1px solid #ccc">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-6">
+              <label for="firstName"><b>First name</b></label>
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name"
+                name="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                <div *ngIf="f.firstName.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="lastName"><b>Last name</b></label>
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name"
+                name="lastName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                <div *ngIf="f.lastName.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="bloodGroup"><b>Blood Group</b></label>
+              <input type="text" formControlName="bloodGroup" class="form-control" placeholder="Enter Blood Group"
+                name="bloodGroup" [ngClass]="{ 'is-invalid': submitted && f.bloodGroup.errors }" />
+              <div *ngIf="submitted && f.bloodGroup.errors" class="invalid-feedback">
+                <div *ngIf="f.bloodGroup.errors.required">Blood Group is required</div>
+                <div *ngIf="f.bloodGroup.errors.pattern">Only String accept here</div>
+              </div>
+
+            </div>
+            <div class="col-6">
+              <label for="mobileNumber"><b>Mobile</b></label>
+              <input class="form-control" formControlName="mobileNumber" type="text" placeholder="Enter Mobile No"
+                name="mobileNumber" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
+              <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.mobileNumber.errors.required">Mobile is required</div>
+                <div *ngIf="f.mobileNumber.errors.pattern">Enter number only 10 digit only </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-6">
+              <label for="location"><b>Location</b></label>
+              <input class="form-control" formControlName="location" type="text" placeholder="Enter Location"
+                name="location" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+              <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                <div *ngIf="f.location.errors.required">Location is required</div>
+                <div *ngIf="f.location.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="jobDesc"><b>Job Desc</b></label>
+              <input class="form-control" formControlName="jobDesc" type="text" placeholder="Enter Job Description"
+                name="jobDesc" [ngClass]="{ 'is-invalid': submitted && f.jobDesc.errors }" />
+              <div *ngIf="submitted && f.jobDesc.errors" class="invalid-feedback">
+                <div *ngIf="f.jobDesc.errors.required">Job Desc is required</div>
+                <div *ngIf="f.jobDesc.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-6">
+              <label for="expertise"><b>Expertise</b></label>
+              <input class="form-control" formControlName="expertise" type="text" placeholder="Enter Expertise"
+                name="expertise" [ngClass]="{ 'is-invalid': submitted && f.expertise.errors }" />
+              <div *ngIf="submitted && f.expertise.errors" class="invalid-feedback">
+                <div *ngIf="f.expertise.errors.required">Expertise is required</div>
+                <div *ngIf="f.expertise.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="aboutme"><b>About me</b></label>
+              <input class="form-control" formControlName="aboutme" type="text" placeholder="Enter About me"
+                name="aboutme" [ngClass]="{ 'is-invalid': submitted && f.aboutme.errors }" />
+              <div *ngIf="submitted && f.aboutme.errors" class="invalid-feedback">
+                <div *ngIf="f.aboutme.errors.required">About me is required</div>
+                <div *ngIf="f.aboutme.errors.pattern">Only String accept here</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="department"><b>Department</b></label>
+              <input class="form-control" formControlName="department" type="text" placeholder="Enter Department"
+                name="department" [ngClass]="{ 'is-invalid': submitted && f.department.errors }" />
+              <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                <div *ngIf="f.department.errors.required">Department is required</div>
+                <div *ngIf="f.department.errors.pattern">Only String accept here</div>
+              </div>
+              <br>
+            </div>
+            <div class="col-6"></div>
+          </div>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn" data-dismiss="modal" (click)="addEmployee()">Add</button>
+            <button type="submit" class="resetBtn" data-dismiss="modal" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

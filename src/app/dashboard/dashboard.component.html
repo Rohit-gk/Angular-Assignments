@@ -1,0 +1,25 @@
+<div class="sidenav"><br><br>
+  <a routerLink="/dashboard/employee"><i class="fa fa-fw fa-home"></i>&nbsp; Home</a>
+  <a routerLink="employee/list"><i class="fa fa-fw fa-user"></i>&nbsp; List</a>
+  <a routerLink="employee/insert"><i class="fa fa-fw fa-envelope"></i>&nbsp; Add</a>
+  <a ><i class="fa fa-fw fa-mobile"></i>&nbsp; Contact</a>
+</div>
+
+<div class="main">
+  <div class="row empDetails">
+    <div class="col-6">
+      <h2 class="mt-3">
+        Employee Dashboard
+      </h2>
+    </div>
+    <div class="col-5">
+
+    </div>
+
+    <div class="col-1 mt-1">
+      <img src="assets/log.png" alt="" class="logout" (click)="logout()">
+      <span>Logout</span>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

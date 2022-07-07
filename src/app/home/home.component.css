@@ -1,0 +1,14 @@
+.img {
+    height: 50px;
+    width: 50px;
+}
+
+.img1 {
+    height: 500px;
+    width: 100%;
+}
+
+.scroll {
+    overflow: auto;
+    overflow-x: hidden;
+}

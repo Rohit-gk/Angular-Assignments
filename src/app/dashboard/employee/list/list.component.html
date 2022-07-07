@@ -1,0 +1,62 @@
+<div class="row empDetails">
+  <div class="col-11">
+    <h3 class="mt-2">Employee List</h3>
+  </div>
+  <div class="col-1 mt-1"> 
+    <img src="assets/plus.png" alt="" style="height: 40px;width:40px" (click)="goToAddEmployee()">
+  </div>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Fname</th>
+        <th>Lname</th>
+        <th>Mobile</th>
+        <th>Blood Group</th>
+        <th>Location</th>
+        <th>Job Desc</th>
+        <th>Expertise</th>
+        <th>Aboutme</th>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let emp of empList.result ;let i = index;">
+      <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.mobileNumber}}</td>
+        <td>{{emp.bloodGroup}}</td>
+        <td>{{emp.location}}</td>
+        <td>{{emp.jobDesc}}</td>
+        <td>{{emp.expertise}}</td>
+        <td>{{emp.aboutme}}</td>
+        <td>{{emp.department}}</td>
+        <td>
+          <img src="assets/edit.png" alt="" style="height: 20px;width: 20px;" (click)="editEmployee(emp.id)">&nbsp;
+          <img src="assets/delete.png" alt="" style="height: 20px;width: 20px;"  (click)="deleteEmployee(emp.id)">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <!-- delete modal -->
+
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content">
+      <div class="container">
+        <h1>Delete Employee</h1>
+        <p>Are you sure you want to delete your employee?</p>
+      
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div>

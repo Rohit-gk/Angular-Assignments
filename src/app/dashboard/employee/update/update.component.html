@@ -1,0 +1,83 @@
+<div class="addEmp">Update Employee</div>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form [formGroup]="empForm" style="border:1px solid #ccc">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-6">
+              <label for="id"><b>Employee Id</b></label>
+              <input type="text" formControlName="id" class="form-control" placeholder="Enter Id" />
+            </div>
+            <div class="col-6">
+              <label for="firstName"><b>First name</b></label>
+              <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name"
+                name="firstName">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="lastName"><b>Last name</b></label>
+              <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name"
+                name="lastName">
+            </div>
+            <div class="col-6">
+              <label for="bloodGroup"><b>Blood Group</b></label>
+              <input type="text" formControlName="bloodGroup" class="form-control" placeholder="Enter Blood Group"
+                name="bloodGroup">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="mobileNumber"><b>Mobile Number</b></label>
+              <input type="text" formControlName="mobileNumber" class="form-control" placeholder="Enter Mobile Number"
+                name="mobileNumber">
+            </div>
+            <div class="col-6">
+              <label for="location"><b>Location</b></label>
+              <input type="text" formControlName="location" class="form-control" placeholder="Enter Location"
+                name="location">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="jobDesc"><b>Job Description</b></label>
+              <input type="text" formControlName="jobDesc" class="form-control" placeholder="Enter Job Desc"
+                name="jobDesc">
+
+            </div>
+            <div class="col-6">
+              <label for="expertise"><b>Expertise</b></label>
+              <input type="text" formControlName="expertise" class="form-control" placeholder="Enter expertise"
+                name="expertise">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <label for="aboutme"><b>Aboutme</b></label>
+              <input type="text" formControlName="aboutme" class="form-control" placeholder="Enter aboutme"
+                name="aboutme">
+            </div>
+            <div class="col-6">
+              <label for="department"><b>Department</b></label>
+              <input type="text" formControlName="department" class="form-control" placeholder="Enter Department"
+                name="department">
+            </div>
+          </div>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn" data-dismiss="modal" (click)="updateEmployee()">Update</button>
+            <button type="submit" class="resetBtn" data-dismiss="modal" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
