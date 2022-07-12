@@ -9,6 +9,12 @@ import { ItemService } from './item.service';
   providedIn: 'root'
 })
 export class EmployeeService {
+  hide() {
+    throw new Error('Method not implemented.');
+  }
+  show() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient, private route: Router, private itemService: ItemService) { }
 
@@ -45,6 +51,12 @@ export class EmployeeService {
   getDummyData() {
     return this.http.get(
       'https://jsonplaceholder.typicode.com/users',
+    );
+  }
+
+  getLoader() {
+    return this.http.get(
+      'http://www.mocky.io/v2/5ec6a61b3200005e00d75058',
     );
   }
 }

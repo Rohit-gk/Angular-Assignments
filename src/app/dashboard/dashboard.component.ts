@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../services/employee.service';
 import { ItemService } from '../services/item.service';
+import { Spinkit } from 'ng-http-loader';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ItemService } from '../services/item.service';
 export class DashboardComponent implements OnInit {
 
   empList:any=[];
+  spinnerStyle = Spinkit;
   
   constructor(private router:Router,private itemService:ItemService,private empService:EmployeeService) {}
 

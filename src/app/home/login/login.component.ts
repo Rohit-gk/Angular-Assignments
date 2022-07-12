@@ -49,9 +49,9 @@ export class LoginComponent implements OnInit {
       if (val.result) {
         this.itemService.setToken(val.result)
         this.isSuccessful = true;
-        setTimeout(() => {
+        // setTimeout(() => {
           this.router.navigate(['dashboard']);
-        }, 4000);
+        // }, 4000);
       }
     },
       error => {
@@ -60,5 +60,6 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
 
 }

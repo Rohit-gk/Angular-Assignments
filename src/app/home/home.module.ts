@@ -13,6 +13,7 @@ import { EmployeeService } from '../services/employee.service';
 import { DatalistComponent } from './datalist/datalist.component';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,7 +26,7 @@ import { DatalistComponent } from './datalist/datalist.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class HomeModule { }

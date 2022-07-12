@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { DeletemodalComponent } from 'src/app/shared/deletemodal/deletemodal.component';
+
 
 @Component({
   selector: 'app-list',

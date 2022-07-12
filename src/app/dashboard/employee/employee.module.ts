@@ -7,6 +7,11 @@ import { InsertComponent } from './insert/insert.component';
 import { UpdateComponent } from './update/update.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestLoaderComponent } from './test-loader/test-loader.component';
+
+import { SharedModule } from 'src/app/shared/shared.module';
+
+import { NgxSpinnerModule } from "ngx-spinner"; 
 
 
 @NgModule({
@@ -15,11 +20,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InsertComponent,
     UpdateComponent,
     ListComponent,
+    TestLoaderComponent,
   ],
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    SharedModule,
   ]
 })
 export class EmployeeModule { }
